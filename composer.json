@@ -1,0 +1,88 @@
+{
+  "name": "wpdesk/dropshipping-xml-for-woocommerce",
+  "authors": [
+    {
+      "name": "Marcin",
+      "email": "marcin@wpdesk.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WPDesk\\DropshippingXmlFree\\": "src/Plugin"
+    },
+    "classmap": ["vendor_prefixed"]
+  },
+  "autoload-dev": {
+    "classmap": ["tests/unit", "tests/integration"]
+  },
+  "config": {
+    "sort-packages": true,
+    "platform": {
+      "php": "7.4.33"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "wpdesk/wp-wpdesk-composer": true,
+      "kylekatarnls/update-helper": true,
+      "wpdesk/wp-codeception": true,
+      "cweagans/composer-patches": true,
+      "phpstan/extension-installer": true
+    },
+		"platform-check": false,
+		"gitlab-domains": ["gitlab.wpdesk.dev"]
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.4",
+    "psr/container": "^1.0",
+    "psr/log": "^1.0.1",
+    "wpdesk/wp-wpdesk-helper-override": "^1.1.0"
+  },
+  "require-dev": {
+    "10up/wp_mock": "*",
+    "phpunit/phpunit": "^8",
+    "wpdesk/ltv-dashboard-widget": "^1",
+    "wpdesk/phpstan-rules": "^1.2",
+    "wpdesk/woocommerce-dropshipping-xml-core": "^1.7",
+    "wpdesk/wp-codeception": "^2",
+    "wpdesk/wp-forms": "^2",
+    "wpdesk/wp-helpscout-beacon": "^1.2",
+    "wpdesk/wp-persistence": "2.1.4",
+    "wpdesk/wp-plugin-flow-common": "1.2.0",
+    "wpdesk/wp-plugin-flow-free": "*",
+    "wpdesk/wp-view": "^2",
+    "wpdesk/wp-wpdesk-composer": "^3"
+  },
+  "extra": {
+    "text-domain": "dropshipping-xml-for-woocommerce",
+    "translations-folder": "lang",
+    "translation-file-headers": {
+      "Project-Id-Version": "Dropshipping XML for WooCommerce",
+      "Last-Translator": "Marcin Kolanko <marcin@wpdesk.net>",
+      "X-Poedit-WPHeader": "dropshipping-xml-for-woocommerce.php"
+    },
+    "po-files": {
+      "pl_PL": "pl_PL.po"
+    }
+  },
+  "scripts": {
+    "test": "echo composer is alive",
+    "phpcs": "phpcs",
+    "phpunit-unit": "phpunit --configuration phpunit-unit.xml --coverage-text --colors=never",
+    "phpunit-integration": "phpunit --configuration phpunit-integration.xml --coverage-text --colors=never",
+    "docs": "apigen generate"
+  },
+	"repositories": {
+		"octolize": {
+		  "type": "composer",
+		  "url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		},
+		"wpdesk": {
+		  "type": "composer",
+		  "url": "https://gitlab.wpdesk.dev/api/v4/group/wpdesk/-/packages/composer/"
+		}
+	  },
+  "version": "1.6.15",
+  "type": "wordpress-plugin"
+}
